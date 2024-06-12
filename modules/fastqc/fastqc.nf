@@ -4,11 +4,10 @@ process fastqc {
     tag "$sample_id"
 
     input:
-    tuple val(sample_id), path(fastq1), path(fastq2) from fastq_files
+    tuple val(sample_id), path(fastq1), path(fastq2)
 
     output:
     path("${params.output_dir}/fastqc_results/${sample_id}_fastqc.{zip,html}") into fastqc_results_raw
-    file("command-logs-*") optional true
 
     script:
     """
