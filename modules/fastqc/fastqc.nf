@@ -7,7 +7,8 @@ process fastqc {
     tuple val(sample_id), path(fastq1), path(fastq2)
 
     output:
-    path("${params.output_dir}/fastqc_results/${sample_id}_fastqc.{zip,html}") to fastqc_results_raw
+    path("${params.output_dir}/fastqc_results/${sample_id}_fastqc.zip")
+    path("${params.output_dir}/fastqc_results/${sample_id}_fastqc.html")
 
     script:
     """
