@@ -19,7 +19,7 @@ Channel.fromPath(params.input)
     .set { fastq_files }
 
 // Incluir el módulo FastQC
-include { fastqc } from './modules/fastqc/fastqc.nf'
+include { fastqc } from './modules/fastqc.nf'
 
 workflow {
     // Llamar al proceso FastQC
