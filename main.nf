@@ -15,8 +15,6 @@ include { fastqc } from './modules/fastqc/fastqc.nf'
 
 workflow {
     fastqc_results = fastqc(fastq_files)
-
-    // Mover los resultados al directorio de salida especificado
-    fastqc_results.view { "Resultados de FastQC disponibles en: ${params.output_dir}/fastqc_results" }
+    fastqc_results.view()
     fastqc_results.collectFile(name: { it.name }, storeDir: "${params.output_dir}/fastqc_results")
 }
