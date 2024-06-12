@@ -12,11 +12,11 @@
  /*--------------------------------------------------
                 Parametros necesarios
 ---------------------------------------------------*/
-params.input = params.input ?: 'data/data_fastq.csv'
-//params.genome = params.genome ?: 'path/to/genome.fasta'
-//params.gtf = params.gtf ?: 'path/to/annotations.gtf'
-params.output_dir= params._dir ?: 'path/to/Results'
-params.savescript = params.savescript ?: ''
+params {
+    input = "${params.input}"
+    output_dir = "${params.output_dir}"
+    savescript = "${params.savescript}"
+}
 
  /*--------------------------------------------------
                 Módulos and Workflow
@@ -33,4 +33,9 @@ include { fastqc } from './modules/fastqc/main.nf'
 workflow {
     // Se llama al proceso
     fastqc(fastq_files)
+
+    // Definir el directorio de salida
+    fastqc_results_raw.into { fastqc_results }.view { file -> 
+        "Resultados de FastQC disponibles en: ${file}"
+    }
 }
