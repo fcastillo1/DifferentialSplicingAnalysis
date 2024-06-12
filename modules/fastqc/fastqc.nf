@@ -1,4 +1,11 @@
-// modules/fastqc/fastqc.nf
+#!/usr/bin/env nextflow
+/*
+ * Copyright (c) 2024, Munita Lab y autores.
+ *
+ * Autores:
+ * Francisca Reyes <fcastillor.19@gmail.com> 
+ * Roberto Munita
+ */
 
 process fastqc {
     tag "$sample_id"
