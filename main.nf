@@ -19,14 +19,9 @@ Channel.fromPath(params.input)
     .set { fastq_files }
 
 // Incluir el módulo FastQC
-include { fastqc } from './modules/fastqc.nf'
+include { fastqc } from './modules/fastqc/fastqc.nf'
 
 workflow {
     // Llamar al proceso FastQC
     fastqc(fastq_files)
-
-    // Definir el directorio de salida
-    fastqc_results_raw.into { fastqc_results }.view { file -> 
-        "Resultados de FastQC disponibles en: ${file}"
-    }
 }

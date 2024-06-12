@@ -18,3 +18,4 @@ process fastqc {
     mv ${params.output_dir}/fastqc_results/*_fastqc.html ${params.output_dir}/fastqc_results/${sample_id}_fastqc.html
     """
 }
+
