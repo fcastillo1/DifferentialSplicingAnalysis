@@ -8,12 +8,16 @@ params.output_dir = params.output_dir ?: 'Results'
 // Leer archivo CSV y crear un canal
 fastq_files = Channel.fromPath(params.input)
     .splitCsv(header: true)
-    .map { row -> tuple(row.sample_id, file(row.fastq_path_1), file(row.fastq_path_2)) }
+    .map { row -> tuple(row.sample_id, file(row.fastq_path_1.trim()), file(row.fastq_path_2.trim())) }
 
 // Incluir el módulo FastQC
 include { fastqc } from './modules/fastqc/fastqc.nf'
 
 workflow {
-    // Llamar al proceso FastQC
     fastqc(fastq_files)
+        .view { "Resultados de FastQC disponibles en: ${params.output_dir}/fastqc_results" }
+        .set { fastqc_results }
+
+    fastqc_results
+        .collectFile(name: { it.name }, storeDir: params.output_dir)
 }
