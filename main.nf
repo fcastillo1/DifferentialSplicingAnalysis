@@ -14,10 +14,9 @@ fastq_files = Channel.fromPath(params.input)
 include { fastqc } from './modules/fastqc/fastqc.nf'
 
 workflow {
-    fastqc(fastq_files)
-        .view { "Resultados de FastQC disponibles en: ${params.output_dir}/fastqc_results" }
-        .set { fastqc_results }
+    fastqc_results = fastqc(fastq_files)
 
-    fastqc_results
-        .collectFile(name: { it.name }, storeDir: params.output_dir)
+    // Mover los resultados al directorio de salida especificado
+    fastqc_results.view { "Resultados de FastQC disponibles en: ${params.output_dir}/fastqc_results" }
+    fastqc_results.collectFile(name: { it.name }, storeDir: "${params.output_dir}/fastqc_results")
 }
