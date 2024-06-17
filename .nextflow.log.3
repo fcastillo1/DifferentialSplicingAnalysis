@@ -1,0 +1,110 @@
+jun.-16 21:41:30.564 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf --input_dir /Users/franciscareyes/Desktop/Prueba --output_dir /Users/franciscareyes/Desktop/Resultados --cpus 4 --memory '8 GB' --adapter_sequence_file /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/adapters/TruSeq3-PE-2.fa -resume
+jun.-16 21:41:30.773 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.04.2
+jun.-16 21:41:30.793 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/franciscareyes/.nextflow/plugins; core-plugins: nf-amazon@2.5.2,nf-azure@1.6.0,nf-cloudcache@0.4.1,nf-codecommit@0.2.0,nf-console@1.1.3,nf-ga4gh@1.3.0,nf-google@1.13.2,nf-tower@1.9.1,nf-wave@1.4.2
+jun.-16 21:41:30.802 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+jun.-16 21:41:30.803 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+jun.-16 21:41:30.806 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.10.0 in 'deployment' mode
+jun.-16 21:41:30.819 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+jun.-16 21:41:30.838 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/nextflow.config
+jun.-16 21:41:30.840 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/nextflow.config
+jun.-16 21:41:30.864 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/franciscareyes/.nextflow/secrets/store.json
+jun.-16 21:41:30.866 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@7a231dfd] - activable => nextflow.secret.LocalSecretsProvider@7a231dfd
+jun.-16 21:41:30.874 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+jun.-16 21:41:31.232 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+jun.-16 21:41:31.244 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [adoring_rubens] DSL2 - revision: 8d3b8c0868
+jun.-16 21:41:31.245 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+jun.-16 21:41:31.245 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+jun.-16 21:41:31.292 [main] DEBUG nextflow.Session - Session UUID: a0bbf920-ad5a-49df-beef-24f32fd5fbe8
+jun.-16 21:41:31.293 [main] DEBUG nextflow.Session - Run name: adoring_rubens
+jun.-16 21:41:31.293 [main] DEBUG nextflow.Session - Executor pool size: 8
+jun.-16 21:41:31.303 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+jun.-16 21:41:31.307 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+jun.-16 21:41:31.327 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 24.04.2 build 5914
+  Created: 29-05-2024 06:19 UTC (02:19 CLST)
+  System: Mac OS X 14.5
+  Runtime: Groovy 4.0.21 on OpenJDK 64-Bit Server VM 11.0.23+0
+  Encoding: UTF-8 (UTF-8)
+  Process: 50744@Franciscas-MacBook-Air.local [192.168.1.169]
+  CPUs: 8 - Mem: 8 GB (83.7 MB) - Swap: 2 GB (1 GB)
+jun.-16 21:41:31.356 [main] DEBUG nextflow.Session - Work-dir: /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/work [Mac OS X]
+jun.-16 21:41:31.357 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/bin
+jun.-16 21:41:31.364 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+jun.-16 21:41:31.380 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+jun.-16 21:41:31.407 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+jun.-16 21:41:31.416 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+jun.-16 21:41:31.473 [main] DEBUG nextflow.Session - Session start
+jun.-16 21:41:31.641 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+jun.-16 21:41:31.650 [main] INFO  nextflow.Nextflow - Differential Splicing Analysis - NF  ~  version 1.0
+jun.-16 21:41:31.847 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:fastqc2` matches process fastqc2
+jun.-16 21:41:31.855 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+jun.-16 21:41:31.855 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+jun.-16 21:41:31.859 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+jun.-16 21:41:31.862 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=8 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+jun.-16 21:41:31.864 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+jun.-16 21:41:31.939 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+jun.-16 21:41:31.939 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+jun.-16 21:41:31.942 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: trimmomatic, fastqc2
+jun.-16 21:41:31.943 [main] DEBUG nextflow.Session - Igniting dataflow network (3)
+jun.-16 21:41:31.944 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > fastqc2
+jun.-16 21:41:31.944 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > trimmomatic
+jun.-16 21:41:31.945 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_423b1ef3d5c6b6e1: /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/main.nf
+  Script_b80e850eaaf14757: /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/./modules/fastqc/fastqc2.nf
+  Script_c53b804818c53f96: /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/./modules/trimmomatic/trimmomatic.nf
+jun.-16 21:41:31.945 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+jun.-16 21:41:31.945 [main] DEBUG nextflow.Session - Session await
+jun.-16 21:41:32.016 [Actor Thread 3] DEBUG nextflow.sort.BigSort - Sort completed -- entries: 2; slices: 1; internal sort time: 0.013 s; external sort time: 0.002 s; total time: 0.015 s
+jun.-16 21:41:32.016 [Actor Thread 3] DEBUG nextflow.file.FileCollector - >> temp file exists? true
+jun.-16 21:41:32.018 [Actor Thread 3] DEBUG nextflow.file.FileCollector - Retrieved cached collect-files from: /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/work/collect-file/74f5f11f03bc4ffb7e6b8d2010498fa6
+jun.-16 21:41:32.025 [Actor Thread 3] DEBUG nextflow.file.FileCollector - Deleting file collector temp dir: /var/folders/dz/gk9jsssd2c3b50rqtsvhc1zc0000gn/T/nxf-13710481031502285585
+jun.-16 21:41:32.055 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [6d/650cd5] Cached process > fastqc2 (FastQC on SRR12463396_1.fastq)
+jun.-16 21:41:32.055 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [f2/605950] Cached process > fastqc2 (FastQC on SRR12463396_2.fastq)
+jun.-16 21:41:32.077 [Actor Thread 7] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+jun.-16 21:41:32.091 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+jun.-16 21:41:32.092 [Task submitter] INFO  nextflow.Session - [db/086a34] Submitted process > trimmomatic (1)
+jun.-16 21:41:32.133 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: trimmomatic (1); status: COMPLETED; exit: 1; error: -; workDir: /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/work/db/086a34294474a5720e16b1272391e3]
+jun.-16 21:41:32.134 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+jun.-16 21:41:32.138 [TaskFinalizer-1] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=trimmomatic (1); work-dir=/Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/work/db/086a34294474a5720e16b1272391e3
+  error [nextflow.exception.ProcessFailedException]: Process `trimmomatic (1)` terminated with an error exit status (1)
+jun.-16 21:41:32.151 [TaskFinalizer-1] ERROR nextflow.processor.TaskProcessor - Error executing process > 'trimmomatic (1)'
+
+Caused by:
+  Process `trimmomatic (1)` terminated with an error exit status (1)
+
+
+Command executed:
+
+  /usr/local/bin/trimmomatic PE \
+      -threads 1 \
+      -phred33 \
+      SRR12463396_1.fastq SRR12463396_2.fastq \
+      SRR12463396_1_R1_trimmed_paired.fq.gz SRR12463396_1_R1_trimmed_unpaired.fq.gz \
+      SRR12463396_2_R2_trimmed_paired.fq.gz SRR12463396_2_R2_trimmed_unpaired.fq.gz \
+      ILLUMINACLIP:TruSeq3-PE-2.fa:2:30:10 \
+      LEADING:3 \
+      TRAILING:3 \
+      SLIDINGWINDOW:4:20 \
+      MINLEN:36
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  .command.sh: line 2: /usr/local/bin/trimmomatic: No such file or directory
+
+Work dir:
+  /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/work/db/086a34294474a5720e16b1272391e3
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+jun.-16 21:41:32.155 [main] DEBUG nextflow.Session - Session await > all processes finished
+jun.-16 21:41:32.157 [TaskFinalizer-1] DEBUG nextflow.Session - Session aborted -- Cause: Process `trimmomatic (1)` terminated with an error exit status (1)
+jun.-16 21:41:32.167 [main] DEBUG nextflow.Session - Session await > all barriers passed
+jun.-16 21:41:32.167 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+jun.-16 21:41:32.176 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=1; ignoredCount=0; cachedCount=2; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=13ms; cachedDuration=28.1s;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=0; ]
+jun.-16 21:41:32.365 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+jun.-16 21:41:32.387 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

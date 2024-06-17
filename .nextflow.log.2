@@ -1,0 +1,133 @@
+jun.-16 21:44:19.660 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf --input_dir /Users/franciscareyes/Desktop/Prueba --output_dir /Users/franciscareyes/Desktop/Resultados --cpus 4 --memory '8 GB' --adapter_sequence_file /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/adapters/TruSeq3-PE-2.fa -resume
+jun.-16 21:44:19.836 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.04.2
+jun.-16 21:44:19.855 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/franciscareyes/.nextflow/plugins; core-plugins: nf-amazon@2.5.2,nf-azure@1.6.0,nf-cloudcache@0.4.1,nf-codecommit@0.2.0,nf-console@1.1.3,nf-ga4gh@1.3.0,nf-google@1.13.2,nf-tower@1.9.1,nf-wave@1.4.2
+jun.-16 21:44:19.863 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+jun.-16 21:44:19.864 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+jun.-16 21:44:19.866 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.10.0 in 'deployment' mode
+jun.-16 21:44:19.876 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+jun.-16 21:44:19.893 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/nextflow.config
+jun.-16 21:44:19.895 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/nextflow.config
+jun.-16 21:44:19.915 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/franciscareyes/.nextflow/secrets/store.json
+jun.-16 21:44:19.917 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@7a231dfd] - activable => nextflow.secret.LocalSecretsProvider@7a231dfd
+jun.-16 21:44:19.925 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+jun.-16 21:44:20.297 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+jun.-16 21:44:20.309 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [happy_descartes] DSL2 - revision: 8d3b8c0868
+jun.-16 21:44:20.310 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+jun.-16 21:44:20.310 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+jun.-16 21:44:20.359 [main] DEBUG nextflow.Session - Session UUID: a0bbf920-ad5a-49df-beef-24f32fd5fbe8
+jun.-16 21:44:20.359 [main] DEBUG nextflow.Session - Run name: happy_descartes
+jun.-16 21:44:20.359 [main] DEBUG nextflow.Session - Executor pool size: 8
+jun.-16 21:44:20.367 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+jun.-16 21:44:20.370 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+jun.-16 21:44:20.391 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 24.04.2 build 5914
+  Created: 29-05-2024 06:19 UTC (02:19 CLST)
+  System: Mac OS X 14.5
+  Runtime: Groovy 4.0.21 on OpenJDK 64-Bit Server VM 11.0.23+0
+  Encoding: UTF-8 (UTF-8)
+  Process: 50879@Franciscas-MacBook-Air.local [192.168.1.169]
+  CPUs: 8 - Mem: 8 GB (67.3 MB) - Swap: 2 GB (1.1 GB)
+jun.-16 21:44:20.426 [main] DEBUG nextflow.Session - Work-dir: /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/work [Mac OS X]
+jun.-16 21:44:20.427 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/bin
+jun.-16 21:44:20.440 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+jun.-16 21:44:20.449 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+jun.-16 21:44:20.476 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+jun.-16 21:44:20.485 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+jun.-16 21:44:20.551 [main] DEBUG nextflow.Session - Session start
+jun.-16 21:44:20.683 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+jun.-16 21:44:20.692 [main] INFO  nextflow.Nextflow - Differential Splicing Analysis - NF  ~  version 1.0
+jun.-16 21:44:20.766 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_423b1ef3d5c6b6e1: /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/main.nf
+  Script_b80e850eaaf14757: /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/./modules/fastqc/fastqc2.nf
+jun.-16 21:44:20.770 [main] ERROR nextflow.cli.Launcher - Module compilation error
+- file : /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/./modules/trimmomatic/trimmomatic.nf
+- cause: Unexpected input: 'trimmomatic {\n    publishDir 'Trimmomatic_Result/', mode: 'copy'\n\n    input:\n    tuple path(forward_reads), path(reverse_reads)\n    path(adapter_file)\n\n    output:\n    path("${forward_reads.baseName}_R1_trimmed_paired.fq.gz")\n    path("${forward_reads.baseName}_R1_trimmed_unpaired.fq.gz")\n    path("${reverse_reads.baseName}_R2_trimmed_paired.fq.gz")\n    path("${reverse_reads.baseName}_R2_trimmed_unpaired.fq.gz")\n\n    script:\n        """\n        /path/to/trimmomatic/trimmomatic PE \\\n            -threads $task.cpus \\\n            -phred33 \\\n            $forward_reads $reverse_reads \\\n            ${forward_reads.baseName}_R1_trimmed_paired.fq.gz ${forward_reads.baseName}_R1_trimmed_unpaired.fq.gz \\\n            ${reverse_reads.baseName}_R2_trimmed_paired.fq.gz ${reverse_reads.baseName}_R2_trimmed_unpaired.fq.gz \\\n            ILLUMINACLIP:$adapter_file:2:30:10 \\\n            LEADING:3 \\\n            TRAILING:3 \\\n            SLIDINGWINDOW:${params.slidingwindow}:20 \\\n            MINLEN:36\n        """\n    }\n}' @ line 29, column 1.
+   }
+   ^
+
+1 error
+
+nextflow.exception.ScriptCompilationException: Module compilation error
+- file : /Users/franciscareyes/Desktop/my_proyect_nextflow/DifferentialSplicingAnalysis/./modules/trimmomatic/trimmomatic.nf
+- cause: Unexpected input: 'trimmomatic {\n    publishDir 'Trimmomatic_Result/', mode: 'copy'\n\n    input:\n    tuple path(forward_reads), path(reverse_reads)\n    path(adapter_file)\n\n    output:\n    path("${forward_reads.baseName}_R1_trimmed_paired.fq.gz")\n    path("${forward_reads.baseName}_R1_trimmed_unpaired.fq.gz")\n    path("${reverse_reads.baseName}_R2_trimmed_paired.fq.gz")\n    path("${reverse_reads.baseName}_R2_trimmed_unpaired.fq.gz")\n\n    script:\n        """\n        /path/to/trimmomatic/trimmomatic PE \\\n            -threads $task.cpus \\\n            -phred33 \\\n            $forward_reads $reverse_reads \\\n            ${forward_reads.baseName}_R1_trimmed_paired.fq.gz ${forward_reads.baseName}_R1_trimmed_unpaired.fq.gz \\\n            ${reverse_reads.baseName}_R2_trimmed_paired.fq.gz ${reverse_reads.baseName}_R2_trimmed_unpaired.fq.gz \\\n            ILLUMINACLIP:$adapter_file:2:30:10 \\\n            LEADING:3 \\\n            TRAILING:3 \\\n            SLIDINGWINDOW:${params.slidingwindow}:20 \\\n            MINLEN:36\n        """\n    }\n}' @ line 29, column 1.
+   }
+   ^
+
+1 error
+
+	at nextflow.script.ScriptParser.parse0(ScriptParser.groovy:196)
+	at nextflow.script.ScriptParser.parse(ScriptParser.groovy:206)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:221)
+	at nextflow.script.IncludeDef.memoizedMethodPriv$loadModule0PathMapSession(IncludeDef.groovy:140)
+	at nextflow.script.IncludeDef.access$0(IncludeDef.groovy)
+	at nextflow.script.IncludeDef$__clinit__closure2.doCall(IncludeDef.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:279)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at groovy.lang.Closure.call(Closure.java:433)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.lambda$call$0(Memoize.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:113)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.call(Memoize.java:136)
+	at nextflow.script.IncludeDef.loadModule0(IncludeDef.groovy)
+	at nextflow.script.IncludeDef.load0(IncludeDef.groovy:112)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at Script_423b1ef3d5c6b6e1.runScript(Script_423b1ef3d5c6b6e1:20)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.script.BaseScript.run0(BaseScript.groovy:159)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:209)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:236)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:243)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:138)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:372)
+	at nextflow.cli.Launcher.run(Launcher.groovy:503)
+	at nextflow.cli.Launcher.main(Launcher.groovy:657)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+Script_d7451f2942423408: 29: Unexpected input: 'trimmomatic {\n    publishDir 'Trimmomatic_Result/', mode: 'copy'\n\n    input:\n    tuple path(forward_reads), path(reverse_reads)\n    path(adapter_file)\n\n    output:\n    path("${forward_reads.baseName}_R1_trimmed_paired.fq.gz")\n    path("${forward_reads.baseName}_R1_trimmed_unpaired.fq.gz")\n    path("${reverse_reads.baseName}_R2_trimmed_paired.fq.gz")\n    path("${reverse_reads.baseName}_R2_trimmed_unpaired.fq.gz")\n\n    script:\n        """\n        /path/to/trimmomatic/trimmomatic PE \\\n            -threads $task.cpus \\\n            -phred33 \\\n            $forward_reads $reverse_reads \\\n            ${forward_reads.baseName}_R1_trimmed_paired.fq.gz ${forward_reads.baseName}_R1_trimmed_unpaired.fq.gz \\\n            ${reverse_reads.baseName}_R2_trimmed_paired.fq.gz ${reverse_reads.baseName}_R2_trimmed_unpaired.fq.gz \\\n            ILLUMINACLIP:$adapter_file:2:30:10 \\\n            LEADING:3 \\\n            TRAILING:3 \\\n            SLIDINGWINDOW:${params.slidingwindow}:20 \\\n            MINLEN:36\n        """\n    }\n}' @ line 29, column 1.
+   }
+   ^
+
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:292)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:148)
+	at org.apache.groovy.parser.antlr4.AstBuilder.collectSyntaxError(AstBuilder.java:4753)
+	at org.apache.groovy.parser.antlr4.AstBuilder.access$100(AstBuilder.java:169)
+	at org.apache.groovy.parser.antlr4.AstBuilder$3.syntaxError(AstBuilder.java:4764)
+	at groovyjarjarantlr4.v4.runtime.ProxyErrorListener.syntaxError(ProxyErrorListener.java:44)
+	at groovyjarjarantlr4.v4.runtime.Parser.notifyErrorListeners(Parser.java:543)
+	at groovyjarjarantlr4.v4.runtime.DefaultErrorStrategy.notifyErrorListeners(DefaultErrorStrategy.java:154)
+	at org.apache.groovy.parser.antlr4.internal.DescriptiveErrorStrategy.reportNoViableAlternative(DescriptiveErrorStrategy.java:92)
+	at groovyjarjarantlr4.v4.runtime.DefaultErrorStrategy.reportError(DefaultErrorStrategy.java:139)
+	at org.apache.groovy.parser.antlr4.GroovyParser.commandExpression(GroovyParser.java:9738)
+	at org.apache.groovy.parser.antlr4.GroovyParser.statementExpression(GroovyParser.java:8235)
+	at org.apache.groovy.parser.antlr4.GroovyParser.statement(GroovyParser.java:7080)
+	at org.apache.groovy.parser.antlr4.GroovyParser.scriptStatement(GroovyParser.java:517)
+	at org.apache.groovy.parser.antlr4.GroovyParser.scriptStatements(GroovyParser.java:416)
+	at org.apache.groovy.parser.antlr4.GroovyParser.compilationUnit(GroovyParser.java:363)
+	at org.apache.groovy.parser.antlr4.AstBuilder.buildCST(AstBuilder.java:243)
+	at org.apache.groovy.parser.antlr4.AstBuilder.buildCST(AstBuilder.java:221)
+	at org.apache.groovy.parser.antlr4.AstBuilder.buildAST(AstBuilder.java:262)
+	at org.apache.groovy.parser.antlr4.Antlr4ParserPlugin.buildAST(Antlr4ParserPlugin.java:58)
+	at org.codehaus.groovy.control.SourceUnit.buildAST(SourceUnit.java:256)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:663)
+	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:373)
+	at groovy.lang.GroovyClassLoader.lambda$parseClass$2(GroovyClassLoader.java:316)
+	at org.codehaus.groovy.runtime.memoize.StampedCommonCache.compute(StampedCommonCache.java:163)
+	at org.codehaus.groovy.runtime.memoize.StampedCommonCache.getAndPut(StampedCommonCache.java:154)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:314)
+	at groovy.lang.GroovyShell.parseClass(GroovyShell.java:572)
+	at groovy.lang.GroovyShell.parse(GroovyShell.java:585)
+	at groovy.lang.GroovyShell.parse(GroovyShell.java:639)
+	at groovy.lang.GroovyShell.parse(GroovyShell.java:643)
+	at nextflow.script.ScriptParser.parse0(ScriptParser.groovy:175)
+	... 32 common frames omitted
